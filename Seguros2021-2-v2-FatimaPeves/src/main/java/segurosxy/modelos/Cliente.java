@@ -3,6 +3,7 @@ package segurosxy.modelos;
 import java.util.ArrayList;
 import java.util.List;
 
+import segurosxy.modelos.patrones.PaisContext;
 import segurosxy.modelos.patrones.UbigeoContext;
 
 public class Cliente {
@@ -10,6 +11,8 @@ public class Cliente {
     private String nombre;
     private UbigeoContext ubigeoCasa;
     private UbigeoContext ubigeoTrabajo;
+    private PaisContext paisDomicilio;
+    private PaisContext paisNacimiento;
     private List<Seguro> seguros;
 
     public Cliente(String nombre)   {
@@ -64,5 +67,27 @@ public class Cliente {
             System.out.println("[Ubigeo] Trabajo: "+ ubigeoTrabajo.getDepartamento() +", "+ ubigeoTrabajo.getProvincia() +", "+ ubigeoTrabajo.getDistrito());
     }
 
+    public PaisContext getPaisDomicilio() {
+        return paisDomicilio;
+    }
+
+    public void setPaisDomicilio(PaisContext paisDomicilio) {
+        this.paisDomicilio = paisDomicilio;
+    }
+
+    public PaisContext getPaisNacimiento() {
+        return paisNacimiento;
+    }
+
+    public void setPaisNacimiento(PaisContext paisNacimiento) {
+        this.paisNacimiento = paisNacimiento;
+    }
+
+    public void printPaises(){
+        if (paisDomicilio!=null)
+            System.out.println("[Pais] Domicilio: "+ paisDomicilio.getPais());
+            if (paisNacimiento!=null)
+            System.out.println("[Pais] Nacimiento: "+ paisNacimiento.getPais());
+    }
 
 }
