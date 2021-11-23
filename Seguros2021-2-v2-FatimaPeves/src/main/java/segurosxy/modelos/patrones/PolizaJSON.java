@@ -14,7 +14,7 @@ public class PolizaJSON extends Poliza implements IImprimible {
         StringBuffer json = new StringBuffer();
         json.append("{");
         json.append(" impresion: {");
-        json.append("  title: \"Formato XML\",");
+        json.append("  title: \"Formato JSON\",");
         json.append("  poliza: {");
         json.append("   numero: " + getNumero() + ",");
         json.append("   nombresAsegurado: \"" + getNombresAsegurado() + "\",");
